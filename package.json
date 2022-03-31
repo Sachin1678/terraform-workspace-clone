@@ -2,7 +2,6 @@
   "name": "terraform-workspace-clone",
   "version": "0.0.1",
   "author": "Sachin<rajput.sachingla@gmail.com>",
-  "private": true,
   "license": "MIT",
   "scripts": {
     "build": "tsc",
@@ -18,8 +17,8 @@
   "bin": {
     "tf-ws-clone": "dist/bin/index.js",
     "tf-workspace-clone": "dist/bin/index.js",
-    "terrform-ws-clone": "dist/bin/index.js",
-    "terrform-workspace-clone": "dist/bin/index.js"
+    "terraform-ws-clone": "dist/bin/index.js",
+    "terraform-workspace-clone": "dist/bin/index.js"
   },
   "files": [
     "dist/*"
@@ -35,7 +34,6 @@
     "eslint": "^8.11.0",
     "jest": "^27.5.1",
     "prettier": "^2.6.0",
-    "prompts": "^2.4.2",
     "ts-jest": "^27.1.4",
     "ts-node": "^10.7.0",
     "tsconfig-paths": "^3.14.0",
@@ -46,11 +44,13 @@
   "description": "Clone existing TF workspace",
   "dependencies": {
     "axios": "^0.26.1",
-    "lodash": "^4.17.21"
+    "chalk": "^5.0.1",
+    "lodash": "^4.17.21",
+    "prompts": "^2.4.2"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Sachin1678/terrform-workspace-clone.git"
+    "url": "git+https://github.com/Sachin1678/terraform-workspace-clone.git"
   },
   "keywords": [
     "terraform",
@@ -62,7 +62,7 @@
   ],
   "bugs": {
     "email": "rajput.sachingla@gmail.com",
-    "url": "https://github.com/Sachin1678/terrform-workspace-clone/issues"
+    "url": "https://github.com/Sachin1678/terraform-workspace-clone/issues"
   },
-  "homepage": "https://github.com/Sachin1678/terrform-workspace-clone#readme"
+  "homepage": "https://github.com/Sachin1678/terraform-workspace-clone#readme"
 }

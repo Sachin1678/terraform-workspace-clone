@@ -6,7 +6,7 @@
 # ✨
 > Clone existing TF workspace.
 
-### 🏠 [Homepage](https://github.com/Sachin1678/terrform-workspace-clone#readme)
+### 🏠 [Homepage](https://github.com/Sachin1678/terraform-workspace-clone#readme)
 
 ## Install
 
@@ -39,7 +39,7 @@ npm run test
 
 ## 🤝 Contributing
 
-Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/Sachin1678/terrform-workspace-clone/issues). You can also take a look at the [contributing guide](https://github.com/Sachin1678/terrform-workspace-clone/blob/master/CONTRIBUTING.md).
+Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/Sachin1678/terraform-workspace-clone/issues). You can also take a look at the [contributing guide](https://github.com/Sachin1678/terraform-workspace-clone/blob/master/CONTRIBUTING.md).
 
 ## Show your support
 
@@ -48,4 +48,4 @@ Give a ⭐️ if this project helped you!
 ## 📝 License
 
 Copyright © 2022 [Sachin <rajput.sachingla@gmail.com>](https://github.com/Sachin1678).<br />
-This project is [MIT](https://github.com/Sachin1678/terrform-workspace-clone/blob/master/LICENSE) licensed.
+This project is [MIT](https://github.com/Sachin1678/terraform-workspace-clone/blob/master/LICENSE) licensed.
