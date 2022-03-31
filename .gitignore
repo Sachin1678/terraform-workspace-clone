@@ -1,0 +1,70 @@
+# compiled output
+/dist
+/node_modules
+tapes/
+dist
+# env files
+.env
+dev.env
+test.env
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# OS
+*.DS_Store
+
+# Tests
+/coverage
+/.nyc_output
+
+# IDEs and editors
+/.idea
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# IDE - VSCode
+.vscode/*
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# Docs stuff
+/documentation/node_modules
+
+# Production
+/documentation/build
+
+# Generated files
+/documentation/.docusaurus
+/documentation/.cache-loader
+
+# Misc
+/documentation/.env.local
+/documentation/.env.development.local
+/documentation/.env.test.local
+/documentation/.env.production.local
+
+/documentation/yarn-debug.log*
+/documentation/yarn-error.log*
+
+# Kafka data files
+/kafka/data
+
+# Sonnar
+.scannerwork
+.vscode/launch.json
+
+# E2EE Service
+# any folder named node_modules
+node_modules
+test-report.html

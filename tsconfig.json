@@ -1,0 +1,29 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "declaration": true,
+    "removeComments": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "target": "es2017",
+    "esModuleInterop": true,
+    "sourceMap": true,
+    "outDir": "./dist",
+    "baseUrl": "./",
+    "incremental": true,
+    "allowJs": true,
+    "strictPropertyInitialization": false,
+    "moduleResolution": "node",
+    "paths": {},
+    "plugins": [
+      {
+        "transform": "ts-transformer-imports"
+      }
+    ]
+  },
+  "exclude": [
+    "node_modules",
+    "./dist",
+    "__tests__"
+  ]
+}
