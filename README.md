@@ -5,7 +5,7 @@
 </p>
 
 # ✨
-> Clone existing TF workspace.
+> Clone existing terraform workspace.
 
 ### 🏠 [Homepage](https://github.com/Sachin1678/terraform-workspace-clone#readme)
 
