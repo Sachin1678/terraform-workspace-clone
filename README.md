@@ -1,10 +1,13 @@
 <h1 align="center">terraform-workspace-clone 👋</h1>
+
+
+> A NPM global module to clone terraform workspace.
 <p>
   <img alt="Version" src="https://img.shields.io/badge/version-1.0.0-blue.svg" />
   <img alt="Version" src="https://img.shields.io/badge/license-MIT-orange.svg" />
 </p>
 
-# ✨
+# Getting started
 > Clone existing terraform workspace.
 
 ### 🏠 [Homepage](https://github.com/Sachin1678/terraform-workspace-clone#readme)

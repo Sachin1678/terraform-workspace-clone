@@ -75,11 +75,6 @@ export default class TFCloneWS {
           'terraform-version': workspaceData.attributes['terraform-version'],
           'working-directory': workspaceData.attributes['working-directory'],
           'tag-names': workspaceData.attributes['tag-names'],
-          'vcs-repo': _.pick(workspaceData.attributes['vcs-repo'], [
-            'identifier',
-            'branch',
-            'oauth-token-id',
-          ]),
         },
         type: 'workspaces',
       },
