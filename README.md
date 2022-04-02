@@ -1,9 +1,9 @@
 <h1 align="center">terraform-workspace-clone 👋</h1>
 
 
-> A NPM global module to clone terraform workspace.
+> `terraform-workspace-clone` is a command-line module to clone terraform workspace.
 <p>
-  <img alt="Version" src="https://img.shields.io/badge/version-1.0.0-blue.svg" />
+  <img alt="Version" src="https://img.shields.io/badge/version-2.0.0-blue.svg" />
   <img alt="Version" src="https://img.shields.io/badge/license-MIT-orange.svg" />
 </p>
 
@@ -19,16 +19,49 @@ npm install -g terraform-workspace-clone
 ```
 
 ## Usage
-
-Run command in cli, It will prompt for basic config details to clone workspace.
-```sh
-tf-ws-clone
+`terraform-workspace-clone` needs few details before cloning the workspace. Input can be provided using cli prompts or can pass pre-filled json file as command-line argument. 
+### Cli prompts:
+Run below command in cli.
 ```
-or 
-
-```sh
 terraform-workspace-clone
 ```
+
+Can also use `tf-ws-clone` , It is a shorthand command.
+
+Example:
+```
+✔ TF domain name?  https://app.terraform.io   // Terraform domain, can be cloud or enterprise
+✔ Source workspace ID? ws-9xZ3c3iabcdefgh     // Workspace id which you need to clone
+✔ New workspace name? 00-test-1               // New workspace name
+✔ TF api token  ****************              // For more details go to `API Token` section of https://www.terraform.io/cloud-docs/users-teams-organizations/users
+✔ Destination TF organization name?  abc_org  // TF org name in which new workspace will be created.
+✔ Do you want to clone with values? no / yes  // Yes, if you want to clone variables with values.
+```
+
+### Config file:
+Input can be passed using pre-filled json file. Json file should have below info:
+
+```
+{
+    "baseUrl": "https://app.terraform.io",
+    "orgName": "abc_org",
+    "sourceWSId": "ws-9xZ3c3iabcdefgh",
+    "apiToken": "Zxcvbnm..............sjhsmD",
+    "newWSName": "00-test-1",
+    "isCloneValue": true or false
+}
+```
+and then pass this file as a input
+
+```sh
+tf-ws-clone --config=<path to json file>/<filename>.json
+```
+
+Example:
+```
+tf-ws-clone --config=./tfconfig.json
+```
+
 ## Run tests
 
 ```sh

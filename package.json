@@ -1,6 +1,6 @@
 {
   "name": "terraform-workspace-clone",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "author": "Sachin<rajput.sachingla@gmail.com>",
   "license": "MIT",
   "scripts": {
@@ -10,13 +10,12 @@
     "prebuild": "npm run format && npm run lint",
     "prepare": "npm run build",
     "prestart": "npm run build",
-    "start": "ts-node -r tsconfig-paths/register index",
+    "start": "ts-node -r tsconfig-paths/register src/bin/index",
     "test": "jest",
     "version": "npm run format"
   },
   "bin": {
-    "tf-ws-clone": "dist/bin/index.js",
-    "tf-workspace-clone": "dist/bin/index.js",
+    "tf-ws-clone": "dist/bin/index.js", "tf-workspace-clone": "dist/bin/index.js",
     "terraform-ws-clone": "dist/bin/index.js",
     "terraform-workspace-clone": "dist/bin/index.js"
   },
@@ -46,7 +45,8 @@
     "axios": "^0.26.1",
     "chalk": "^4.1.2",
     "lodash": "^4.17.21",
-    "prompts": "^2.4.2"
+    "prompts": "^2.4.2",
+    "yargs": "^17.4.0"
   },
   "repository": {
     "type": "git",
@@ -55,8 +55,8 @@
   "keywords": [
     "terraform",
     "clone",
-    "tf",
     "workspace",
+    "tf",
     "replicate",
     "copy"
   ],
