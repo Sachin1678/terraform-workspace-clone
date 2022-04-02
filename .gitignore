@@ -68,3 +68,6 @@ lerna-debug.log*
 # any folder named node_modules
 node_modules
 test-report.html
+
+#config file
+tfconfig.json

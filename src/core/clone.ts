@@ -13,13 +13,6 @@ export default class TFCloneWS {
   }
 
   async setup() {
-    const validityText = this.validateInput(this.config);
-
-    if (validityText) {
-      console.log(validityText);
-      return;
-    }
-
     try {
       const searchWS = await this.cloneWS.searchWorkspace(
         this.config.orgName,
@@ -79,22 +72,6 @@ export default class TFCloneWS {
         type: 'workspaces',
       },
     };
-  }
-
-  validateInput(config: ITFConfig) {
-    const checkCondition =
-      !(
-        config.apiToken &&
-        config.baseUrl &&
-        config.newWSName &&
-        config.orgName &&
-        config.orgName &&
-        config.sourceWSId
-      ) || config.isCloneValue === undefined;
-
-    if (checkCondition) {
-      return 'Provide all required values.';
-    }
   }
 
   async createWorkspaceVars(varData, workspaceId) {
