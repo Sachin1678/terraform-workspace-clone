@@ -60,7 +60,7 @@ and then pass this file as a input.
 tf-ws-clone --config=<path to json file>/<filename>.json
 ```
 
-This template can be generated using cli command. It will create a config template file with all the required keys **`ws_clone_config.json`** at same path from where `tf-ws-clone` command is executed.
+This template can be generated using cli command. It will create a config template file with all the required keys **`tf_ws_clone_config.json`** at same path from where `tf-ws-clone` command is executed.
 
 ```sh
 tf-ws-clone initconfig
@@ -68,7 +68,7 @@ tf-ws-clone initconfig
 
 Example:
 ```
-tf-ws-clone --config=./ws_clone_config.json
+tf-ws-clone --config=./tf_ws_clone_config.json
 ```
 
 ### Running on-demand using npx:
@@ -80,6 +80,7 @@ npx terraform-workspace-clone
 ```
 npx terraform-workspace-clone --config=./tfconfig.json
 ```
+
 ## Run tests
 
 ```sh
