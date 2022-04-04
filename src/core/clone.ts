@@ -15,8 +15,8 @@ export default class TFCloneWS {
   async setup() {
     try {
       const searchWS = await this.cloneWS.searchWorkspace(
-        this.config.orgName,
-        this.config.newWSName,
+        this.config.destinationOrgName,
+        this.config.newWorkspaceName,
       );
 
       if (searchWS.data.length) {
@@ -26,7 +26,7 @@ export default class TFCloneWS {
       }
 
       const existingWS = await this.cloneWS.fetchWorkspaceById(
-        this.config.sourceWSId,
+        this.config.sourceWorkspaceId,
       );
 
       if (!existingWS.data.id) {
@@ -38,10 +38,10 @@ export default class TFCloneWS {
       const rawVars = await this.cloneWS.fetchWorkspaceVars(existingWS.data.id);
       const createWorkspaceInput = this.workspaceAttributes(
         existingWS.data,
-        this.config.newWSName,
+        this.config.newWorkspaceName,
       );
       const newWS = await this.cloneWS.createWorkspace(
-        this.config.orgName,
+        this.config.destinationOrgName,
         createWorkspaceInput,
       );
       const formattedVarsPayload = this.cloneWS.formatVarPayload(
@@ -52,7 +52,7 @@ export default class TFCloneWS {
 
       log(
         'info',
-        `Workspace ${this.config.newWSName} created in ${this.config.orgName} organization.`,
+        `Workspace ${this.config.newWorkspaceName} created in ${this.config.destinationOrgName} organization.`,
       );
     } catch (error) {
       log('error', error?.message);
