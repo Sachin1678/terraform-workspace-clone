@@ -39,8 +39,7 @@ Example:
 ```
 
 **NOTE:** User should have permission to access source and destination org. To generate user api token, </br> go to **User Settings -> Tokens -> click on "Create an API token" button -> Create API token -> Copy token -> Done**. </br>
-![User API token](https://github.com/sachin1678/terraform-workspace-clone/blob/main/user_api_token.png?raw=true)
-
+![User API token](https://raw.githubusercontent.com/Sachin1678/terraform-workspace-clone/main/screenshots/user_api_token.png)
 ### Config file:
 Input can be passed using pre-filled json file. JSON file should have below info:
 
