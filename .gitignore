@@ -70,4 +70,6 @@ node_modules
 test-report.html
 
 #config file
-tfconfig.json
+tf_ws_clone_config.json
+*.tgz
+checklist

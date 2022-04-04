@@ -1,9 +1,8 @@
 export interface ITFConfig {
   baseUrl: string;
-  orgName: string;
-  // sourceWSName: string;
-  sourceWSId: string;
+  sourceWorkspaceId: string;
+  destinationOrgName: string;
+  newWorkspaceName: string;
   apiToken: string;
-  newWSName: string;
   isCloneValue: boolean;
 }

@@ -3,7 +3,7 @@
 
 > `terraform-workspace-clone` is a command-line module to clone terraform workspace.
 <p>
-  <img alt="Version" src="https://img.shields.io/badge/version-2.0.0-blue.svg" />
+  <img alt="Version" src="https://img.shields.io/badge/version-2.1.0-blue.svg" />
   <img alt="Version" src="https://img.shields.io/badge/license-MIT-orange.svg" />
 </p>
 
@@ -33,35 +33,53 @@ Example:
 ✔ TF domain name?  https://app.terraform.io   // Terraform domain, can be cloud or enterprise
 ✔ Source workspace ID? ws-9xZ3c3iabcdefgh     // Workspace id which you need to clone
 ✔ New workspace name? 00-test-1               // New workspace name
-✔ TF api token  ****************              // For more details go to `API Token` section of https://www.terraform.io/cloud-docs/users-teams-organizations/users
 ✔ Destination TF organization name?  abc_org  // TF org name in which new workspace will be created.
+✔ TF api token  ****************              // User api token. For more details go to `API Token` section of https://www.terraform.io/cloud-docs/users-teams-organizations/users.
 ✔ Do you want to clone with values? no / yes  // Yes, if you want to clone variables with values.
 ```
 
+**NOTE:** User should have permission to access source and destination org. To generate user api token, </br> go to **User Settings -> Tokens -> click on "Create an API token" button -> Create API token -> Copy token -> Done**. </br>
+![User API token](https://github.com/sachin1678/terraform-workspace-clone/blob/main/user_api_token.png?raw=true)
+
 ### Config file:
-Input can be passed using pre-filled json file. Json file should have below info:
+Input can be passed using pre-filled json file. JSON file should have below info:
 
 ```
 {
     "baseUrl": "https://app.terraform.io",
-    "orgName": "abc_org",
-    "sourceWSId": "ws-9xZ3c3iabcdefgh",
+    "sourceWorkspaceId": "ws-9xZ3c3iabcdefgh",
+    "newWorkspaceName": "00-test-1",
+    "destinationOrgName": "abc_org",
     "apiToken": "Zxcvbnm..............sjhsmD",
-    "newWSName": "00-test-1",
     "isCloneValue": true or false
 }
 ```
-and then pass this file as a input
+and then pass this file as a input.
 
 ```sh
 tf-ws-clone --config=<path to json file>/<filename>.json
 ```
 
-Example:
-```
-tf-ws-clone --config=./tfconfig.json
+This template can be generated using cli command. It will create a config template file with all the required keys **`ws_clone_config.json`** at same path from where `tf-ws-clone` command is executed.
+
+```sh
+tf-ws-clone initconfig
 ```
 
+Example:
+```
+tf-ws-clone --config=./ws_clone_config.json
+```
+
+### Running on-demand using npx:
+Using `npx` you can run the script on-demand:
+```
+npx terraform-workspace-clone
+```
+
+```
+npx terraform-workspace-clone --config=./tfconfig.json
+```
 ## Run tests
 
 ```sh

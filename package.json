@@ -1,6 +1,6 @@
 {
   "name": "terraform-workspace-clone",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "author": "Sachin<rajput.sachingla@gmail.com>",
   "license": "MIT",
   "scripts": {
@@ -15,7 +15,8 @@
     "version": "npm run format"
   },
   "bin": {
-    "tf-ws-clone": "dist/bin/index.js", "tf-workspace-clone": "dist/bin/index.js",
+    "tf-ws-clone": "dist/bin/index.js", 
+    "tf-workspace-clone": "dist/bin/index.js",
     "terraform-ws-clone": "dist/bin/index.js",
     "terraform-workspace-clone": "dist/bin/index.js"
   },
