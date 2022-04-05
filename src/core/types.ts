@@ -3,6 +3,7 @@ export interface ITFConfig {
   sourceWorkspaceId: string;
   destinationOrgName: string;
   newWorkspaceName: string;
-  apiToken: string;
+  destinationOrgVcsOauthTokenId: string;
+  userApiToken: string;
   isCloneValue: boolean;
 }

@@ -6,11 +6,11 @@ export default class CloneWorkspace {
   URL: string = '';
   headers = {};
 
-  constructor(baseUrl: string, apiToken: string) {
+  constructor(baseUrl: string, userApiToken: string) {
     this.URL = `${baseUrl}/${this.BASE_PATH}`;
     this.headers = {
       'Content-Type': 'application/vnd.api+json',
-      Authorization: `Bearer ${apiToken}`,
+      Authorization: `Bearer ${userApiToken}`,
     };
   }
 

@@ -9,7 +9,7 @@ export default class TFCloneWS {
 
   constructor(config: ITFConfig) {
     this.config = config;
-    this.cloneWS = new CloneWorkspace(config.baseUrl, config.apiToken);
+    this.cloneWS = new CloneWorkspace(config.baseUrl, config.userApiToken);
   }
 
   async setup() {
@@ -36,9 +36,10 @@ export default class TFCloneWS {
       }
 
       const rawVars = await this.cloneWS.fetchWorkspaceVars(existingWS.data.id);
-      const createWorkspaceInput = this.workspaceAttributes(
+      const createWorkspaceInput = this.createWorkspaceInput(
         existingWS.data,
         this.config.newWorkspaceName,
+        this.config.destinationOrgVcsOauthTokenId,
       );
       const newWS = await this.cloneWS.createWorkspace(
         this.config.destinationOrgName,
@@ -59,19 +60,36 @@ export default class TFCloneWS {
     }
   }
 
-  workspaceAttributes(workspaceData, name = '') {
-    return {
+  createWorkspaceInput(workspaceData, name = '', destVcsOauthTokenId = '') {
+    const attributes = workspaceData.attributes;
+    const input = {
       data: {
         attributes: {
           name,
-          description: workspaceData.attributes['description'],
-          'terraform-version': workspaceData.attributes['terraform-version'],
-          'working-directory': workspaceData.attributes['working-directory'],
-          'tag-names': workspaceData.attributes['tag-names'],
+          description: attributes.description,
+          'terraform-version': attributes['terraform-version'],
+          'working-directory': attributes['working-directory'],
+          'tag-names': attributes['tag-names'],
+          'trigger-prefixes': attributes['trigger-prefixes'],
         },
         type: 'workspaces',
       },
     };
+
+    if (
+      destVcsOauthTokenId &&
+      !_.isEmpty(workspaceData.attributes['vcs-repo'])
+    ) {
+      const vcsConfig = workspaceData.attributes['vcs-repo'];
+
+      input.data.attributes['vcs-repo'] = {
+        identifier: vcsConfig.identifier,
+        branch: vcsConfig.branch,
+        'oauth-token-id': destVcsOauthTokenId,
+      };
+    }
+
+    return input;
   }
 
   async createWorkspaceVars(varData, workspaceId) {
