@@ -4,6 +4,7 @@
   Author: Sachin Kumar
   -->
 
+<meta name="google-site-verification" content="8A5R1KtPcvI0VKtc-q-ImfuZK7_-wtyGZuQXR3mT11E" />
 <meta property="og:title" content="terraform, workspace, clone, duplicate">
 <meta name="terraform-workspace-clone" content="terraform, workspace, clone, duplicate">
 <h1 align="center">terraform-workspace-clone 👋</h1>
