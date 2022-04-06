@@ -32,9 +32,15 @@ const questions = [
   },
   {
     type: 'password',
-    name: 'apiToken',
-    message: 'TF api token',
-    validate: (apiToken: string) => !!apiToken,
+    name: 'destinationOrgVcsOauthTokenId',
+    message:
+      "(Optional) OAuth Token id from destinaton organization to clone source workspace's VCS config?",
+  },
+  {
+    type: 'password',
+    name: 'userApiToken',
+    message: 'User api token',
+    validate: (userApiToken: string) => !!userApiToken,
   },
   {
     type: 'toggle',
@@ -47,5 +53,9 @@ const questions = [
 ];
 
 export default async function clonePrompts() {
-  return await prompts(questions);
+  try {
+    return await prompts(questions);
+  } catch (error) {
+    console.log(error);
+  }
 }

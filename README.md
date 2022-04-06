@@ -1,9 +1,17 @@
+<!--
+  Title: terraform-workspace-clone
+  Description: NPM command line module to clone or duplicate extsting terraform workspace.
+  Author: Sachin Kumar
+  -->
+
+<meta property="og:title" content="terraform, workspace, clone, duplicate">
+<meta name="terraform-workspace-clone" content="terraform, workspace, clone, duplicate">
 <h1 align="center">terraform-workspace-clone 👋</h1>
 
 
 > `terraform-workspace-clone` is a command-line module to clone terraform workspace.
 <p>
-  <img alt="Version" src="https://img.shields.io/badge/version-2.1.0-blue.svg" />
+  <img alt="Version" src="https://img.shields.io/badge/version-2.2.0-blue.svg" />
   <img alt="Version" src="https://img.shields.io/badge/license-MIT-orange.svg" />
 </p>
 
@@ -34,12 +42,18 @@ Example:
 ✔ Source workspace ID? ws-9xZ3c3iabcdefgh     // Workspace id which you need to clone
 ✔ New workspace name? 00-test-1               // New workspace name
 ✔ Destination TF organization name?  abc_org  // TF org name in which new workspace will be created.
-✔ TF api token  ****************              // User api token. For more details go to `API Token` section of https://www.terraform.io/cloud-docs/users-teams-organizations/users.
-✔ Do you want to clone with values? no / yes  // Yes, if you want to clone variables with values.
+✔ (Optional) OAuth Token id from destinaton organization? // Required if want to clone VCS config. Refer 2nd screenshot.
+✔ User api token  ****************              // User api token. Screenshot 1. For more details go to `API Token` section of https://www.terraform.io/cloud-docs/users-teams-organizations/users.
+✔ Do you want to clone with values? no / yes  // Yes, if want to clone variables with values.
 ```
 
-**NOTE:** User should have permission to access source and destination org. To generate user api token, </br> go to **User Settings -> Tokens -> click on "Create an API token" button -> Create API token -> Copy token -> Done**. </br>
+**NOTE:** User should have permission to access source and destination org. 
+1. To generate user api token, </br> go to **User Settings -> Tokens -> click on "Create an API token" button -> Create API token -> Copy token -> Done**. </br>
 ![User API token](https://raw.githubusercontent.com/Sachin1678/terraform-workspace-clone/main/screenshots/user_api_token.png)
+
+2. To fetch VCS OAuth token ID, Select TF destination organization and go to **Settings -> Providers -> Copy OAuth client id**. Destination organization should be able to access VCS repo configured in source workspace. If VCS provider not configured then click on **Settings -> Providers -> Add VCS provider**. 
+![VCS token ID](https://raw.githubusercontent.com/Sachin1678/terraform-workspace-clone/main/screenshots/vcs_oauth_token.png)
+
 ### Config file:
 Input can be passed using pre-filled json file. JSON file should have below info:
 
@@ -49,7 +63,8 @@ Input can be passed using pre-filled json file. JSON file should have below info
     "sourceWorkspaceId": "ws-9xZ3c3iabcdefgh",
     "newWorkspaceName": "00-test-1",
     "destinationOrgName": "abc_org",
-    "apiToken": "Zxcvbnm..............sjhsmD",
+    "destinationOrgVcsOauthTokenId": "",
+    "userApiToken": "Zxcvbnm..............sjhsmD",
     "isCloneValue": true or false
 }
 ```
@@ -77,7 +92,7 @@ npx terraform-workspace-clone
 ```
 
 ```
-npx terraform-workspace-clone --config=./tfconfig.json
+npx terraform-workspace-clone --config=./tf_ws_clone_config.json
 ```
 
 ## Run tests

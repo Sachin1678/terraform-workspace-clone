@@ -17,7 +17,7 @@ export default async function commands(): Promise<void> {
 
 function sanitizeInput(config) {
   const isValid =
-    config.apiToken &&
+    config.userApiToken &&
     config.baseUrl &&
     config.newWorkspaceName &&
     config.destinationOrgName &&
@@ -30,12 +30,13 @@ function sanitizeInput(config) {
     );
   } else {
     return _.pick(config, [
-      'apiToken',
+      'userApiToken',
       'baseUrl',
       'newWorkspaceName',
       'destinationOrgName',
       'sourceWorkspaceId',
       'isCloneValue',
+      'destinationOrgVcsOauthTokenId',
     ]);
   }
 }
