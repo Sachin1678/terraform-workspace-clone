@@ -1,3 +1,11 @@
+<!--
+  Title: terraform-workspace-clone
+  Description: NPM command line module to clone or duplicate extsting terraform workspace.
+  Author: Sachin Kumar
+  -->
+
+<meta property="og:title" content="terraform, workspace, clone, duplicate">
+<meta name="terraform-workspace-clone" content="terraform, workspace, clone, duplicate">
 <h1 align="center">terraform-workspace-clone 👋</h1>
 
 
