@@ -1,23 +1,21 @@
 <!--
   Title: terraform-workspace-clone
-  Description: NPM command line module to clone or duplicate extsting terraform workspace.
+  Description: NPM package to clone or duplicate extsting terraform workspace.
   Author: Sachin Kumar
   -->
 
 <meta name="google-site-verification" content="8A5R1KtPcvI0VKtc-q-ImfuZK7_-wtyGZuQXR3mT11E" />
-<meta property="og:title" content="terraform, workspace, clone, duplicate">
-<meta name="terraform-workspace-clone" content="terraform, workspace, clone, duplicate">
 <h1 align="center">terraform-workspace-clone</h1>
 
+NPM package to clone or duplicate extsting terraform workspace
 
-> `terraform-workspace-clone` is a command-line module to clone terraform workspace.
 <p>
-  <img alt="Version" src="https://img.shields.io/badge/version-2.2.0-blue.svg" />
+  <img alt="Version" src="https://img.shields.io/badge/version-2.2.1-blue.svg" />
   <img alt="Version" src="https://img.shields.io/badge/license-MIT-orange.svg" />
 </p>
 
 # Getting started
-> Clone existing terraform workspace.
+> terraform-workspace-clone is a command-line module to clone terraform workspace
 
 ### 🏠 [Homepage](https://github.com/Sachin1678/terraform-workspace-clone#readme)
 

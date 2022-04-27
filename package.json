@@ -1,6 +1,6 @@
 {
   "name": "terraform-workspace-clone",
-  "version": "2.2.1",
+  "version": "2.2.2",
   "author": "Sachin<rajput.sachingla@gmail.com>",
   "license": "MIT",
   "scripts": {
