@@ -7,15 +7,16 @@
 <meta name="google-site-verification" content="8A5R1KtPcvI0VKtc-q-ImfuZK7_-wtyGZuQXR3mT11E" />
 <h1 align="center">terraform-workspace-clone</h1>
 
-NPM package to clone or duplicate extsting terraform workspace
-
+## NPM package to clone or duplicate extsting terraform workspace.
+</br>
 <p>
-  <img alt="Version" src="https://img.shields.io/badge/version-2.2.1-blue.svg" />
+  <img alt="Version" src="https://img.shields.io/badge/version-2.2.2-blue.svg" />
   <img alt="Version" src="https://img.shields.io/badge/license-MIT-orange.svg" />
+  <img alt="Downloads" src="https://img.shields.io/npm/dt/terraform-workspace-clone.svg?maxAge=3600" />
 </p>
 
 # Getting started
-> terraform-workspace-clone is a command-line module to clone terraform workspace
+### terraform-workspace-clone is a command-line module to clone terraform workspace.
 
 ### 🏠 [Homepage](https://github.com/Sachin1678/terraform-workspace-clone#readme)
 
