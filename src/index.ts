@@ -7,6 +7,7 @@ export default async function commands(): Promise<void> {
   if (argv._[0] === 'initconfig') return; // Cli instruction to create config template. No other action needed.
   try {
     const input = argv?.config ? argv : await clonePrompts();
+    console.log(input);
     const sanitizedInput = sanitizeInput(input);
     const tfClone = new TFCloneWS(sanitizedInput);
     await tfClone.setup();
@@ -20,7 +21,7 @@ function sanitizeInput(config) {
     config.userApiToken &&
     config.baseUrl &&
     config.newWorkspaceName &&
-    config.destinationOrgName &&
+    (config.isSameOrg || config.destinationOrgName) &&
     config.sourceWorkspaceId &&
     config.isCloneValue !== undefined;
 
@@ -37,6 +38,7 @@ function sanitizeInput(config) {
       'sourceWorkspaceId',
       'isCloneValue',
       'destinationOrgVcsOauthTokenId',
+      'isSameOrg',
     ]);
   }
 }

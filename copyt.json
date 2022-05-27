@@ -1,0 +1,43 @@
+/**
+* PASS THIS CONFIG WHEN CLONING IN SAME ORG
+* IT WILL CLONE IN SAME ORG WITH VCS CONFIG
+**/
+{
+  "baseUrl":"https://app.terraform.io",
+  "sourceWorkspaceId":"ws-9xZ3c3iabcdefgh",
+  "newWorkspaceName":"00-test-1",
+  "isSameOrg": true,
+  "userApiToken":"Zxcvbnm..............sjhsmD",
+  "isCloneValue":true
+}
+
+
+{
+  /**
+* PASS THIS CONFIG WHEN CLONING IN DIFFERENT ORG.
+* IT WILL CLONE WITHOUT VCS CONFIG.
+**/
+  "baseUrl":"https://app.terraform.io",
+  "sourceWorkspaceId":"ws-9xZ3c3iabcdefgh",
+  "newWorkspaceName":"00-test-1",
+  "isSameOrg": false,
+  "destinationOrgName":"abc_org",
+  "destinationOrgVcsOauthTokenId": "",
+  "userApiToken":"Zxcvbnm..............sjhsmD",
+  "isCloneValue":true
+}
+
+/**
+* PASS THIS CONFIG WHEN CLONING IN DIFFERENT ORG.
+* IT WILL CLONE WITH VCS CONFIG.
+**/
+{
+  "baseUrl":"https://app.terraform.io",
+  "sourceWorkspaceId":"ws-9xZ3c3iabcdefgh",
+  "newWorkspaceName":"00-test-1",
+  "isSameOrg": false,
+  "destinationOrgName":"abc_org",
+  "destinationOrgVcsOauthTokenId": "",
+  "userApiToken":"Zxcvbnm..............sjhsmD",
+  "isCloneValue":true
+}

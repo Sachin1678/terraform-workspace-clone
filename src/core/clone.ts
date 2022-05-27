@@ -14,15 +14,8 @@ export default class TFCloneWS {
 
   async setup() {
     try {
-      const searchWS = await this.cloneWS.searchWorkspace(
-        this.config.destinationOrgName,
-        this.config.newWorkspaceName,
-      );
-
-      if (searchWS.data.length) {
-        throw new Error(
-          'New workspace can not be created. Workspace with this name already exists in destination TF org.',
-        );
+      if (!this.config.isSameOrg) {
+        this.checkExistingWorkspace();
       }
 
       const existingWS = await this.cloneWS.fetchWorkspaceById(
@@ -33,6 +26,13 @@ export default class TFCloneWS {
         throw new Error(
           'Source workspace doesnt exists. Provide valid source to clone.',
         );
+      }
+
+      if (this.config.isSameOrg) {
+        this.config.destinationOrgName =
+          existingWS.data.relationships.organization.data.id;
+        this.config.destinationOrgVcsOauthTokenId =
+          existingWS.data.attributes['vcs-repo']['oauth-token-id'];
       }
 
       const rawVars = await this.cloneWS.fetchWorkspaceVars(existingWS.data.id);
@@ -60,6 +60,18 @@ export default class TFCloneWS {
     }
   }
 
+  async checkExistingWorkspace() {
+    const searchWS = await this.cloneWS.searchWorkspace(
+      this.config.destinationOrgName,
+      this.config.newWorkspaceName,
+    );
+
+    if (searchWS.data.length) {
+      throw new Error(
+        'New workspace can not be created. Workspace with this name already exists in destination TF org.',
+      );
+    }
+  }
   createWorkspaceInput(workspaceData, name = '', destVcsOauthTokenId = '') {
     const attributes = workspaceData.attributes;
     const input = {

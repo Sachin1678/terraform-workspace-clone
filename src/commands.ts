@@ -24,7 +24,7 @@ export const argv = yargs(process.argv.slice(2))
   })
   .command(['initconfig'], 'Create config template', () => {
     fs.writeFileSync(TEMPLATE_FILE_NAME, TEMPLATE_CONFIG, 'utf8');
-
+    // fs.copyFile('source.txt', 'destination.txt', (err) => {
     return;
   })
   .help().argv;

@@ -15,7 +15,7 @@
     "version": "npm run format"
   },
   "bin": {
-    "tf-ws-clone": "dist/bin/index.js", 
+    "tf-ws-clone": "dist/bin/index.js",
     "tf-workspace-clone": "dist/bin/index.js",
     "terraform-ws-clone": "dist/bin/index.js",
     "terraform-workspace-clone": "dist/bin/index.js"
